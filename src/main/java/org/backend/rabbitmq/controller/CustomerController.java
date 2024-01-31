@@ -1,5 +1,6 @@
 package org.backend.rabbitmq.controller;
 
+import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.backend.rabbitmq.dto.CustomerRegistrationRequest;
 import org.backend.rabbitmq.services.CustomerService;
@@ -11,7 +12,10 @@ import org.springframework.web.bind.annotation.RestController;
 @Slf4j
 @RestController
 @RequestMapping(path = "api/v1/customer")
-public record CustomerController(CustomerService customerService) {
+@AllArgsConstructor
+public class CustomerController{
+
+    private final CustomerService customerService;
     @PostMapping
     public void registerCustomer(@RequestBody CustomerRegistrationRequest customerRegistrationRequest){
         log.info(String.format("New Customer Request -> %s",customerRegistrationRequest.toString()));
