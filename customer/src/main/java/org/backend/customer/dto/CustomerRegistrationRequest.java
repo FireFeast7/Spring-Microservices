@@ -1,4 +1,4 @@
-package org.backend.rabbitmq.dto;
+package org.backend.customer.dto;
 
 public record CustomerRegistrationRequest (
         String firstName,

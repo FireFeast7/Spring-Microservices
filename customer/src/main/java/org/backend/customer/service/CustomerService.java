@@ -1,10 +1,10 @@
-package org.backend.rabbitmq.services;
+package org.backend.customer.service;
 
 import lombok.RequiredArgsConstructor;
-import org.backend.rabbitmq.dto.CustomerRegistrationRequest;
-import org.backend.rabbitmq.dto.FraudCheckResponse;
-import org.backend.rabbitmq.entity.Customer;
-import org.backend.rabbitmq.repository.CustomerRepository;
+import org.backend.customer.dto.CustomerRegistrationRequest;
+import org.backend.customer.dto.FraudCheckResponse;
+import org.backend.customer.entity.Customer;
+import org.backend.customer.repository.CustomerRepository;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 

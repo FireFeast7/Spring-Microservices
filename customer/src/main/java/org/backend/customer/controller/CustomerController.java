@@ -1,9 +1,10 @@
-package org.backend.rabbitmq.controller;
+package org.backend.customer.controller;
 
 import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
-import org.backend.rabbitmq.dto.CustomerRegistrationRequest;
-import org.backend.rabbitmq.services.CustomerService;
+
+import org.backend.customer.dto.CustomerRegistrationRequest;
+import org.backend.customer.service.CustomerService;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
