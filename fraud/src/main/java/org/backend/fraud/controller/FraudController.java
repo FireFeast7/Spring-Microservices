@@ -1,6 +1,7 @@
 package org.backend.fraud.controller;
 
 import lombok.RequiredArgsConstructor;
+import org.backend.client.fraud.FraudCheckResponse;
 import org.backend.fraud.service.FraudCheckServices;
 import org.springframework.web.bind.annotation.*;
 

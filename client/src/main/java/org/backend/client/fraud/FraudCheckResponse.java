@@ -1,4 +1,4 @@
-package org.backend.customer.dto;
+package org.backend.client.fraud;
 
 public record FraudCheckResponse(Boolean isFraudster) {
 }
