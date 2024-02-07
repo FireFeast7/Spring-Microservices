@@ -1,3 +1,5 @@
+package org.backend.notification.config;
+
 import lombok.Data;
 import org.springframework.amqp.core.Binding;
 import org.springframework.amqp.core.BindingBuilder;
@@ -17,7 +19,7 @@ public class NotificationConfig {
     @Value("${rabbitmq.queue.notification}")
     private String notificationQueue;
 
-    @Value("${rabbitmq.routing-keys.internal-notifcation}")
+    @Value("${rabbitmq.routing-keys.internal-notification}")
     private String notificationRoutingKey;
 
     @Bean

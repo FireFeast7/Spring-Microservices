@@ -1,6 +1,7 @@
 package org.backend.customer.service;
 
 import lombok.RequiredArgsConstructor;
+import org.backend.amqp.producer.MessageProducer;
 import org.backend.client.fraud.FraudCheckResponse;
 import org.backend.client.fraud.FraudClient;
 import org.backend.client.notification.NotificationClient;
@@ -19,6 +20,7 @@ public class CustomerService {
     private final RestTemplate restTemplate;
     private final FraudClient fraudClient;
     private final NotificationClient notificationClient;
+    private final MessageProducer producer;
     public void registerCustomer(CustomerRegistrationRequest request){
         Customer customer = Customer.builder()
                 .firstName(request.firstName())
@@ -31,13 +33,18 @@ public class CustomerService {
             throw new IllegalStateException("fraudster");
         }
 
-        notificationClient.sendNotification(
-                new NotificationRequest(
+
+//                new NotificationRequest(
+//                        customer.getId(),
+//                        customer.getEmail(),
+//                        String.format("Hi %s, welcome to Microservices",customer.getFirstName())
+//                )
+//        );
+        producer.publish(new NotificationRequest(
                         customer.getId(),
                         customer.getEmail(),
                         String.format("Hi %s, welcome to Microservices",customer.getFirstName())
-                )
-        );
+                ),"internal.exchanges","internal.notification.routing-key");
     }
 
 }
