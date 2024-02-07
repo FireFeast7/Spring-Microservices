@@ -12,6 +12,7 @@
     <artifactId>amqp</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <name>amqp</name>
+    <packaging>jar</packaging>
     <description>amqp</description>
     <properties>
         <java.version>17</java.version>
